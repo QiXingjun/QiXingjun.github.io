@@ -12,14 +12,14 @@ keywords: Java
 构造器。构造器是一种特殊类型的方法，它没有返回值。
 
 `
-  class Rock{
-    //这是一个默认构造器
-    Rock(){
-      System.out.print("Rock");
-    }
-    //这是一个含参构造器
-    Rock(int i){
-      System.out.print("Rock"+i+" ");
-    }
+class Rock{
+  //这是一个默认构造器
+  Rock(){
+    System.out.print("Rock");
   }
+  //这是一个含参构造器
+  Rock(int i){
+    System.out.print("Rock"+i+" ");
+  }
+}
 `
