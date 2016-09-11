@@ -52,7 +52,7 @@ this关键字只能在方法内部使用，表示对“调用方法的那个对�
 ```java
 public class Flower{
   int petalCount = 0;
-  String s = "initial value"；
+  String s = "initial value";
   Flower(int petals){
     petalCount = petals;
     System.out.println("Constructor w/ int arg only,petalCount = " + petalCount);
@@ -106,5 +106,25 @@ Java中的垃圾回收工作由垃圾回收器来完成，一旦垃圾回收器�
 Java尽力保证：所有的变量在使用之前都能够得到恰当的初始化，对于方法的局部变量，Java以编译时错误的形式来贯彻这种保证。
 
 ## 7. 构造器初始化
+
+可以使用构造器来进行初始化，但是要牢记：无法阻止自动初始化的进行，它将在构造器被调用之前发生。
+例如：
+```java
+public class Counter{
+  int i;
+  Counter(){
+    i = 7;
+  }
+}
+```
+这段代码中，i首先被置为０，然后变成７。
+
+### 7.1 初始化顺序
+
+在类的内部，变量定义的先后顺序决定了初始化的顺序。即使变量的定义散布于方法定义之间，它们仍然会在任何方法（包括构造器）被调用之前得到初始化。
+
+### 7.2 静态数据的初始化
+
+无论创建多少个对象，静态数据都只占用一份存储区域。static关键字不能应用与局部变量，因此它只能作用于域。
 
 
