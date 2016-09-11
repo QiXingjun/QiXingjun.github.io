@@ -11,7 +11,7 @@ keywords: Java
 在Java中，通过提供构造器，类的设计者可确保每个对象都会得到初始化。构造器采用和类相同的名字，所以“每个方法首字母小写”的编码风格并不适用于
 构造器。构造器是一种特殊类型的方法，它没有返回值。
 
-<pre class=”brush: java; gutter: true;”>
+<pre class=”brush:java;gutter:true;”>
 class Rock{
   //这是一个默认构造器
   Rock(){
@@ -49,7 +49,7 @@ this关键字只能在方法内部使用，表示对“调用方法的那个对�
 
 通过下面的这个例子来进行对this关键字的说明
 
-<pre class=”brush: java; gutter: true;”>
+<pre class=”brush:java;gutter:true;”>
 public class Flower{
   int petalCount = 0;
   String s = "initial value"；
