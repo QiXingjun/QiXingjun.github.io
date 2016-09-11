@@ -11,7 +11,7 @@ keywords: Java
 在Java中，通过提供构造器，类的设计者可确保每个对象都会得到初始化。构造器采用和类相同的名字，所以“每个方法首字母小写”的编码风格并不适用于
 构造器。构造器是一种特殊类型的方法，它没有返回值。
 
-<pre class=”brush:java;gutter:true;”>
+```
 class Rock{
   //这是一个默认构造器
   Rock(){
@@ -22,7 +22,7 @@ class Rock{
     System.out.print("Rock"+i+" ");
   }
 }
-</pre>
+```
 
 ## 2. 方法重载
 
