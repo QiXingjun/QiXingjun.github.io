@@ -49,7 +49,7 @@ this关键字只能在方法内部使用，表示对“调用方法的那个对�
 
 通过下面的这个例子来进行对this关键字的说明
 
-<pre class=”brush:java;gutter:true;”>
+```java
 public class Flower{
   int petalCount = 0;
   String s = "initial value"；
@@ -80,7 +80,7 @@ public class Flower{
     x.printPetalCount();
   }
 }
-</pre>
+```
 
 通过以上代码可以知道：
 1. 尽管可以用this调用一个构造器，但却不能同时调用两个。
