@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 一切皆对象
-categories: JAVA编程思想（第四版）
-description: JAVA编程思想（第四版）读书笔记。
+categories: JAVA编程思想(第四版)
+description: JAVA编程思想(第四版)读书笔记。
 keywords: Java 
 ---
 
