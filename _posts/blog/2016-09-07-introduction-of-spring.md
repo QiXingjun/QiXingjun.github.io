@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Spring之旅
-categories: Spring实战（第四版）
-description: Spring实战（第四版）读书笔记。
+categories: Spring实战(第四版)
+description: Spring实战(第四版)读书笔记。
 keywords: Spring,Java，框架 
 ---
 
