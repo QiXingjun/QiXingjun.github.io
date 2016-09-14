@@ -57,6 +57,27 @@ Windows平台，直接下载Git的安装包，和安装普通软件一样安装�
 
 ## 4. Git基本操作
 
+### 4.1 Git Clone
+
+使用`git clone`拷贝一个Git仓库到本地，让自己能够查看该项目，或者进行修改。
+如果你需要与他人合作一个项目，或者想要复制一个项目，看看代码，你就可以克隆那个项目。 执行命令：
+
+`git clone XXX`，其中XXX代表要克隆的项目的Git库地址。例如，clone一个名为ECollaboration的项目：
+
+```git
+~$ git clone https://github.com/QiXingjun/ECollaboration.git
+Cloning into 'ECollaboration'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+Checking connectivity... done.
+```
+
+
+
+
+
 
 
 
