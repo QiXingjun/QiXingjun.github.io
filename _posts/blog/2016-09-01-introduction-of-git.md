@@ -101,7 +101,20 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-上面的示例说明上次提交之后
+上面的示例说明上次提交之后本地仓库中新添加了一个名为123.txt的文件,想要进行提交的话，需要现进行add，执行`git add 123.txt`之后的结果为：
+
+```
+~/ECollaboration$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   123.txt
+```
+
+这段示例说明，已经进行了add操作，
 
 
 
