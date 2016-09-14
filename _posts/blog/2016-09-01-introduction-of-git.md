@@ -16,7 +16,9 @@ keywords: Git,版本控制
 ### 2.1 Ubuntu下安装Git
 
 Ubuntu下直接使用命令：
+
 `sudo apt-get install git`
+
 就OK了。
 
 ### 2.2 Windows下安装Git
@@ -26,7 +28,9 @@ Windows平台，直接下载Git的安装包，和安装普通软件一样安装�
 ### 2.3 Git配置
 
 配置个人的用户名称和电子邮件地址：
+
 `$ git config --global user.name "QiXingjun"`
+
 `$ git config --global user.email 18862141550@163.com`
 
 ## 3. Git中的基本概念
