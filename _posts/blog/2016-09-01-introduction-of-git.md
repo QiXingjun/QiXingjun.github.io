@@ -114,7 +114,18 @@ Changes to be committed:
 	new file:   123.txt
 ```
 
-这段示例说明，已经进行了add操作，
+这段示例说明，已经进行了add操作，现在就可以进行commit操作了，执行`git commit -m "add a file named 123.txt"`之后的结果为：
+
+```
+$ git commit -m "add a file named 123.txt"
+[master 6b4ad8f] add a file named 123.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 123.txt
+```
+
+这段说明已经将123.txt进行了commit，可以进行push操作了。其中，执行语句中的`-m "XXXXX"`是对于你当前提交的东西进行一个说明。执行`git push`之后你所修改的东西就真正的提交到远程的服务器了。
+
+### 4.2 Git commit
 
 
 
