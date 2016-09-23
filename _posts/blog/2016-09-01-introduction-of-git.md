@@ -288,7 +288,65 @@ nihao ,shiijie !
 
 ## 8. Git撤销修改和删除文件
 
-### 8.1 Git撤销修改和删除文件
+### 8.1 Git撤销修改
+
+现在我在123.txt中新添加了一行`hello moto！`,123.txt中的文件内容为：
+
+```
+hello world!
+
+nihao ,shiijie !
+
+hello moto!
+```
+
+现在如果想要撤销这些修改该怎么办呢？有如下两种方法：第一：如果我知道要删掉那些内容的话，直接手动更改去掉那些需要的文件，然后add添加到暂存区，最后commit掉。第二：可以按以前的方法直接恢复到上一个版本，使用 `git reset --hard HEAD^`。当然，如果你不想用这两种方法，还有第三种：在`4. Git常用命令`中，我说到了`git checkout -- XXX`命令可以丢弃工作区文件XXX的修改。例如：
+
+```
+$ git checkout -- '123.txt'
+```
+
+现在再来看123.txt中的文件内容：
+
+```
+hello world!
+
+nihao ,shiijie !
+```
+
+发下已经没有了`hello moto!`。
+需要强调的是：对于已经放到暂存区的修改，`$ git checkout -- XXX`是不可以回退的。例如，在123.txt中添加内容hahaha，然后add到版本库，再次在123.txt中添加内容lalala。此时123.txt中的内容是：
+
+```
+hello world!
+
+nihao ,shiijie !
+
+hahaha
+
+lalala
+```
+
+使用`git checkout -- 123.txt`之后，123.txt中的内容为：
+
+```
+hello world!
+
+nihao ,shiijie !
+
+hahaha
+```
+
+发现已经被提交到暂存区的内容hahaha并没有撤销。
+
+
+
+
+
+### 8.2 Git删除文件
+
+
+
 
 
 
