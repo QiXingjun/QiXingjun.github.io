@@ -238,7 +238,7 @@ HEAD is now at d2619b5 add hello world! in the file of 123.txt
 hello world!
 ```
 
-再次使用`git log`
+发现已经没有了`nihao ,shijie !`，再次使用`git log`
 
 ```
 $ git log
@@ -255,7 +255,48 @@ Date:   Thu Sep 22 22:24:19 2016 +0800
     add the file of 123.txt
 ```
 
-发现已经没有了`add nihao ,shijie ! in the file of 123.txt`。
+发现已经没有了`add nihao ,shijie ! in the file of 123.txt`。但是如果现在又想恢复`nihao ,shijie !`,该怎么办呢？`git log`中已经没有了这部分信息，这时需要使用另外一个命令：`git relog`。
+
+```
+$ git reflog
+d2619b5 HEAD@{0}: reset: moving to HEAD^
+47303ff HEAD@{1}: commit: add nihao ,shijie ! in the file of 123.txt
+d2619b5 HEAD@{2}: commit: add hello world! in the file of 123.txt
+02c61c8 HEAD@{3}: commit: add the file of 123.txt
+```
+
+从上面的命令，可以看到：`add nihao ,shijie ! in the file of 123.txt`的版本号是`47303ff`，这时可以使用`git reset --hard 47303ff`,如下：
+
+```
+$ git reset --hard 47303ff
+HEAD is now at 47303ff add nihao ,shijie ! in the file of 123.txt
+```
+
+这时再看123.txt中的内容：
+
+```
+hello world!
+
+nihao ,shiijie !
+```
+
+发现`nihao ,shijie !`已经回来了。
+
+## 7. 再讲工作区，暂存区和版本库
+
+工作区就是我们电脑中的目录，通过`add`操作可以将文件放到暂存区，通过`commit`可以将文件放到版本库。其中`add`操作是可以多次进行的，也就是说可以多次将多个文件放到暂存区，然后一次性进行`commit`,即一次性将之前多次放到暂存区的文件一次性放到版本库。
+
+## 8. Git撤销修改和删除文件
+
+### 8.1 Git撤销修改和删除文件
+
+
+
+
+
+
+
+
 
 
 
