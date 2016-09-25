@@ -339,96 +339,177 @@ hahaha
 
 发现已经被提交到暂存区的内容hahaha并没有撤销。
 
+### 8.2 Git删除和恢复删除的文件
 
+#### 8.2.1 删除文件
 
-
-
-### 8.2 Git删除文件
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 4. Git基本操作
-
-### 4.1 Git clone
-
-使用`git clone`拷贝一个Git仓库到本地，让自己能够查看该项目，或者进行修改。
-如果你需要与他人合作一个项目，或者想要复制一个项目，看看代码，你就可以克隆那个项目。 执行命令：
-
-`git clone XXX`，其中XXX代表要克隆的项目的Git库地址。例如，clone一个名为ECollaboration的项目：
+通过`git rm XXX`，来删除文件XXX。
+例如：
 
 ```
-~$ git clone https://github.com/QiXingjun/ECollaboration.git
-Cloning into 'ECollaboration'...
-remote: Counting objects: 6, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (6/6), done.
-Checking connectivity... done.
+$ ls
+1.txt  123  123.txt  789.txt  hello  README.md
 ```
 
-### 4.2 Git status
-
-使用`git status`用于查看你上次提交之后仓库当前的状态。例如：
+原来的工作区中有如上的文件，其中1.txt的内容为：
 
 ```
-~/ECollaboration$ git status
-On branch master
+$ cat 1.txt
+123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123
+```
+
+现在通过命令`rm 1.txt`来删除1.txt，
+
+```
+$ ls
+123  123.txt  789.txt  hello  README.md
+```
+
+发现工作区中已经没有了1.txt。
+
+#### 8.2.2 恢复文件
+
+通过命令`$ git checkout -- 1.txt`来恢复被删除的文件，现在发现1.txt又回来了。
+
+```
+$ ls
+1.txt  123  123.txt  789.txt  hello  README.md
+```
+
+## 9. 远程仓库
+
+我们使用的大多数的远程仓库是`GitHub`，关于GitHub的使用，下面做一些简单的介绍。
+
+### 9.1 创建并添加 SSH Key
+
+第一步：通过命令`ssh-keygen -t rsa –C “youremail@example.com`来创建SSH Key，我们通过访问C盘用户目录下的`.ssh`文件夹，发现多了两个文件：`id_rsa`，`id_rsa.pub`。其中id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。第二步：登录github,打开`settings`中的`SSH Keys`页面，然后点击`Add SSH Key`,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容即可。
+
+### 9.2 关联远程仓库
+
+假设有如下情景：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。这种情况该如何处理呢？
+
+#### 9.2.1 在GitHub上创建一个新的仓库
+
+首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。比如，新建一个名为test的远程仓库,这时的仓库是空的。
+
+#### 9.2.2 本地与远程关联
+
+通过命令`git remote add origin https://github.com/QiXingjun/test`，将本地的仓库与远程的仓库相关联。把本地库的内容推送到远程，使用 `git push -u origin master`命令，实际上是把当前分支master推送到远程。
+由于远程库是空的，我们第一次推送master分支时，加上了`-u`参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令,使用不带`-u`的命令`git push origin master`。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了。
+
+#### 9.2.3 克隆远程仓库
+
+通过命令`git clone https://github.com/QiXingjun/test`就可以克隆远程仓库到本地了。
+
+## 10. 创建与合并分支
+
+### 10.1 创建分支
+
+首先，创建dev分支，然后切换到dev分支：
+```
+$ git checkout -b dev
+Switched to a new branch 'dev'
+```
+
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+
+```
+$ git branch dev
+$ git checkout dev
+Switched to branch 'dev'
+```
+
+然后，用`git branch`命令查看当前分支：
+
+```
+$ git branch
+* dev
+  master
+```
+git branch命令会列出所有分支，当前分支前面会标一个`*`号。
+
+然后，我们就可以在dev分支上正常提交，比如对1.txt做个修改，加上一行：
+
+```
+this is dev 1.txt
+```
+然后提交：
+
+```
+$ git commit -m "dev 1.txt"
+[dev c0b9cc4] dev 1.txt
+ 1 file changed, 1 deletion(-)
+```
+现在，dev分支的工作完成，我们就可以切换回master分支：
+
+```
+$ git checkout master
+Switched to branch 'master'
 Your branch is up-to-date with 'origin/master'.
-
-nothing to commit, working directory clean
 ```
 
-上面的示例说明上次提交之后没有对本地仓库作任何的修改。而如果如下例所示：
+切换回master分支后，再查看1.txt文件，
 
 ```
-~/ECollaboration$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	123.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
+$ cat 1.txt
+123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123
 ```
 
-上面的示例说明上次提交之后本地仓库中新添加了一个名为123.txt的文件,想要进行提交的话，需要现进行add，执行`git add 123.txt`之后的结果为：
+刚才添加的内容不见了！因为那个提交是在dev分支上，而master分支此刻的提交点并没有改变。
+
+### 10.2 创建分支
+
+现在，我们把dev分支的工作成果通过命令`git merge dev`合并到master分支上：
 
 ```
-~/ECollaboration$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   123.txt
+$ git merge dev
+Updating 8a348fb..c0b9cc4
+Fast-forward
+ 1.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 ```
-
-这段示例说明，已经进行了add操作，现在就可以进行commit操作了，执行`git commit -m "add a file named 123.txt"`之后的结果为：
+git merge命令用于合并指定分支到当前分支。合并后，再查看1.txt的内容,
 
 ```
-$ git commit -m "add a file named 123.txt"
-[master 6b4ad8f] add a file named 123.txt
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 123.txt
+$ cat 1.txt
+123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123
+
+this is dev 1.txt
 ```
 
-这段说明已经将123.txt进行了commit，可以进行push操作了。其中，执行语句中的`-m "XXXXX"`是对于你当前提交的东西进行一个说明。执行`git push`之后你所修改的东西就真正的提交到远程的服务器了。
+可以看到，和dev分支的最新提交是完全一样的。
 
-### 4.2 Git commit
+注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
+
+当然，也不是每次合并都能Fast-forward，我们后面会讲其他方式的合并。
+
+合并完成后，就可以放心地通过命令`git branch -d dev`删除dev分支了：
+
+```
+$ git branch -d dev
+Deleted branch dev (was c0b9cc4).
+```
+
+删除后，查看branch，就只剩下master分支了：
+
+```
+$ git branch
+* master
+```
+
+因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在master分支上工作效果是一样的，但过程更安全。
+
+### 10.3 冲突解决
+
+
+
+
+
+
+
+
+
+
 
 
 
