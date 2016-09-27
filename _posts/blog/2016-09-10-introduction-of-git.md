@@ -599,21 +599,192 @@ dev add1
 
 你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，比如:zhangsandev,lisidev，时不时地往dev分支上合并就可以了。
 
+### 10.5 bug分支
+
+在软件开发过程中，我们会遇到各种各样的bug。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
+
+例如：当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支issue-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交。
+并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+幸好，Git还提供了一个`git stash`功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
+现在，用git status查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。
+
+首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支。
+修复完成后，切换到master分支，并完成合并，最后删除issue-101分支。
+然后用`git stash list`命令看看,
+工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
+
+一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
+
+另一种方式是用`git stash pop`，恢复的同时把stash内容也删了。
+
+### 10.6 多人协作开发
+
+当你从远程仓库克隆时，实际上Git自动把本地的`master`分支和远程的`master`分支对应起来了，并且，远程仓库的默认名称是`origin`。
+
+要查看远程库的信息，用`git remote`：
+
+```
+$ git remote
+origin
+```
+
+或者，用`git remote -v`显示更详细的信息：
+
+```
+$ git remote -v
+origin  https://github.com/QiXingjun/ECollaboration.git (fetch)
+origin  https://github.com/QiXingjun/ECollaboration.git (push)
+```
+
+上面显示了可以抓取和推送的origin的地址，如果没有推送权限，就看不到push的地址。
+
+#### 10.6.1 推送分支
+
+推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：
+
+```
+$ git push origin master
+Username for 'https://github.com': QiXingjun
+Everything up-to-date
+```
+如果要推送其他分支，比如dev，首先要通过命令`git checkout dev`切换到dev分支，然后进行推送：
+
+```
+$ git push origin dev
+Username for 'https://github.com': QiXingjun
+Everything up-to-date
+```
+
+但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？
+
+1. master分支是主分支，因此要时刻与远程同步；
+
+2. dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
+
+3. bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
 
 
+#### 10.6.2 多人协作
 
+多人协作时，大家都会往master和dev分支上推送各自的修改。
 
+因此，多人协作的工作模式通常是这样：
 
+首先，可以试图用`git push origin branch-name`推送自己的修改(其中branch-name是需要推送的分支)；
 
+如果推送失败，则因为远程分支版本比你的本地版本更新，需要先用`git pull`试图合并；
 
+如果合并有冲突，则解决冲突，并在本地提交；
 
+没有冲突或者解决掉冲突后，再用`git push origin branch-name`推送就能成功！
 
+如果git pull提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream branch-name origin/branch-name`。
 
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
 
+## 11. 标签管理
 
+发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。
+Git的标签虽然是版本库的快照，但其实它就是指向某个commit的指针，所以，创建和删除标签都是瞬间完成的。
 
+### 11.1 创建标签
 
+在Git中打标签非常简单，首先，切换到需要打标签的分支上，
+然后，敲命令`git tag <name>`就可以打一个新标签：
 
+```
+$ git tag v1.1
+```
 
+可以用命令`git tag`查看所有标签：
 
+```
+$ git tag
+v1.0
+v1.1
+```
 
+默认标签是打在最新提交的commit上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？
+
+方法是通过`git reflog`命令找到历史提交的`commit id`，然后打上就可以了：
+
+```
+$ git reflog
+6301c0f HEAD@{0}: checkout: moving from dev to master
+76e4f36 HEAD@{1}: checkout: moving from master to dev
+6301c0f HEAD@{2}: checkout: moving from dev1 to master
+6301c0f HEAD@{3}: checkout: moving from master to dev1
+6301c0f HEAD@{4}: merge dev: Fast-forward
+658530b HEAD@{5}: checkout: moving from dev to master
+6301c0f HEAD@{6}: commit: add come words
+```
+
+比方说要对`merge dev: Fast-forward`这次提交打标签，它对应的`commit id`是6301c0f，敲入命令：
+
+```
+$ git tag v0.9 6301c0f
+```
+
+再用命令`git tag`查看标签：
+
+```
+$ git tag
+v0.9
+v1.0
+v1.1
+```
+注意，标签不是按时间顺序列出，而是按字母排序的。可以用`git show <tagname>`查看标签信息：
+
+```
+$ git show v1.0
+commit 6301c0f675a9508eb18aed97f08d724725be571b
+Author: QiXingjun <18862141550@163.com>
+Date:   Tue Sep 27 12:43:00 2016 +0800
+
+    add come words
+
+diff --git a/hello.txt b/hello.txt
+index 190a180..e1046c2 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1,3 @@
+ 123
++
++dev add1
+```
+
+### 11.2 删除分支
+
+如果标签打错了，也可以删除：
+
+```
+$ git tag -d v0.9
+Deleted tag 'v0.9' (was 6301c0f)
+```
+因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。
+如果要推送某个标签到远程，使用命令`git push origin <tagname>`：
+
+```
+$ git push origin v1.0
+Username for 'https://github.com': QiXingjun
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/QiXingjun/ECollaboration.git
+ * [new tag]         v1.0 -> v1.0
+```
+
+或者，一次性推送全部尚未推送到远程的本地标签：
+
+```
+$ git push origin --tags
+Username for 'https://github.com': QiXingjun
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 159 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/QiXingjun/ECollaboration.git
+ * [new tag]         v1.1 -> v1.1
+ * [new tag]         v1.2 -> v1.2
+```
+
+## 12. 总结
+
+至此，Git的学习就基本差不多了，如果想要更加深入的理解其中的一些命令，还需要在实践中慢慢体会。
