@@ -501,7 +501,103 @@ $ git branch
 
 ### 10.3 冲突解决
 
-如果
+先看一下master分支下的文件：
+
+```
+XingJun Qi@XingJunQi-PC MINGW64 /g/ECollaboration (master)
+$ ls
+hello.txt  hi.txt
+```
+
+然后看一下dev分支下的文件：
+
+```
+XingJun Qi@XingJunQi-PC MINGW64 /g/ECollaboration (dev)
+$ ls
+hello.txt
+```
+
+现在不管是master分支中的hello.txt文件还是dev分支下的hello.txt文件，内容都是
+
+```
+$ cat hello.txt
+123
+```
+
+首先在master分支下修改hello.txt文件，在下一行添加文字`master add1`,然后进行add和commit将修改提交到版本库。此时，master分支下的hello.txt文件中的内容是：
+
+```
+$ cat hello.txt
+123
+
+master add1
+```
+
+然后，切换到dev分支下，查看dev分支下的hello.txt文件，内容仍为：
+
+```
+$ cat hello.txt
+123
+```
+
+编辑dev分支下的hello.txt文件，在下一行添加文字`dev add1`，然后进行add和commit将修改提交到版本库。此时dev分支下的hello.txt文件中的内容为：
+
+```
+$ cat hello.txt
+123
+
+dev add1
+```
+
+现在，回到master分支中，使用命令`git merge dev`想要将dev分支合并带master分支，但是此时会报错。
+
+```$ git merge dev
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+这时，查看hello.txt文件,会显示如下内容：
+
+```
+$ cat hello.txt
+123
+
+<<<<<<< HEAD
+master add1
+=======
+dev add1
+>>>>>>> dev
+```
+
+Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。这时，修改master分支下的hello.txt文件为：
+
+```
+$ cat hello.txt
+123
+```
+
+再次执行`git merge dev`操作，发现hello.txt文件的内容已经变成了：
+
+```
+$ cat hello.txt
+123
+
+dev add1
+```
+至此，冲突已经解决。
+通过命令`git log --graph --pretty=oneline --abbrev-commit`可以查看分支合并图。
+
+### 10.4 分支策略
+
+在实际开发中，我们应该按照几个基本原则进行分支管理：
+
+首先，`master`分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+
+那在哪干活呢？干活都在`dev`分支上，也就是说，`dev`分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到`master`上，在`master`分支发布1.0版本；
+
+你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，比如:zhangsandev,lisidev，时不时地往dev分支上合并就可以了。
+
 
 
 
