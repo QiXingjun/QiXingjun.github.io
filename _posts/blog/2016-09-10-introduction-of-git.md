@@ -563,11 +563,11 @@ Automatic merge failed; fix conflicts and then commit the result.
 $ cat hello.txt
 123
 
-<<<<<<< HEAD
+\<\<\<\<\<\<\< HEAD
 master add1
-=======
+\=\=\=\=\=\=\=
 dev add1
->>>>>>> dev
+\>\>\>\>\>\>\> dev
 ```
 
 Git用`<<<<<<<`，`=======`，`>>>>>>>`标记出不同分支的内容。这时，修改master分支下的hello.txt文件为：
