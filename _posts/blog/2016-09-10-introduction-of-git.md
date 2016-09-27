@@ -565,7 +565,7 @@ $ cat hello.txt
 
 \<\<\<\<\<\<\< HEAD
 master add1
-\=\=\=\=\=\=\=
+=======
 dev add1
 \>\>\>\>\>\>\> dev
 ```
