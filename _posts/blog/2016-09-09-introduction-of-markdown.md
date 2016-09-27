@@ -135,11 +135,11 @@ Markdown 的粗体和斜体也非常简单，用两个 * 包含一段文本就�
 如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown 下实现也非常简单，只需要用
 
 ```
-```java
+\```java
 class HelloWorld{
   System.out.println("Hello World!");
 }
-```
+\```
 ```
 
 的效果是：
