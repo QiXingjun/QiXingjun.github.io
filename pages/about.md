@@ -19,7 +19,7 @@ permalink: /about/
 
 1、扎实的计算机专业基本功, 拥有良好的编码习惯；
 
-2、精通 Java 及面向对象设计开发, 熟悉各种常用设计模式；；
+2、精通 Java 及面向对象设计开发, 熟悉各种常用设计模式；
 
 3、熟悉 Spring、SpringMVC、MyBatis等流行开源框架；
 
@@ -29,7 +29,7 @@ permalink: /about/
 
 6、熟悉Linux, 具备Linux下的编码能力；
 
-7、熟练掌握Maven构建项目,了解多种Java集成开发环境(IDE) Eclipse、IntelliJ;
+7、熟练掌握Maven构建项目,了解多种Java集成开发环境Eclipse、IntelliJ IDEA;
 
 8、有责任心、有想法，热爱技术，喜欢钻研；
 
@@ -40,7 +40,7 @@ permalink: /about/
 
 * GitHub：[@QiXingjun](https://github.com/QiXingjun)
 * 博客：[@{{ site.title }}]({{ site.url }})
-* 微博: [@HENRY_贰道正无穷](http://weibo.com/henry2to2)
+* 微博: [@齐小白HENRY](http://weibo.com/henry2to2)
 * 知乎: [@齐小白](http://www.zhihu.com/people/qi-xiao-bai-54)
 
 ## Skill Keywords
