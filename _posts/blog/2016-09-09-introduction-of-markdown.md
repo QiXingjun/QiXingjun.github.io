@@ -166,12 +166,15 @@ class HelloWorld{
 ### 3.8 插入图片
 
 ```
-![](图片的地址)
+![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
+```
+或者
+```
+<img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = 200 lighth=200 />
 ```
 
-![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg =100*100)
-或者
-<img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = "100%" lighth="80%" />
+![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
+<img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = 200 lighth=200 />
 
 ## 4. 小结
 
