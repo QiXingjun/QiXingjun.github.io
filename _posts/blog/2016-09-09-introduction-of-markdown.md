@@ -165,7 +165,8 @@ class HelloWorld{
 
 ### 3.8 插入图片
 
-![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg =100x20)
+基本与法： ![](图片的地址)
+![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg =200x200)
 
 ## 4. 小结
 
