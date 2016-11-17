@@ -176,7 +176,9 @@ class HelloWorld{
 
 ![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
 
-<img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width=200 lighth=200 />
+<center>
+<img src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width="25%" height="25%" />
+</center>
 
 ## 4. 小结
 
