@@ -169,11 +169,13 @@ class HelloWorld{
 ![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
 ```
 或者
+
 ```
 <img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = 200 lighth=200 />
 ```
 
 ![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
+
 <img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = 200 lighth=200 />
 
 ## 4. 小结
