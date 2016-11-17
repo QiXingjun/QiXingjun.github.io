@@ -170,6 +170,8 @@ class HelloWorld{
 ```
 
 ![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg =100*100)
+或者
+<img align="center" src="http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg" width = "100%" lighth="80%" />
 
 ## 4. 小结
 
