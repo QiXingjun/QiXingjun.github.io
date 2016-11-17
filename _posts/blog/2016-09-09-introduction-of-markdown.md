@@ -169,7 +169,7 @@ class HelloWorld{
 ![](图片的地址)
 ```
 
-![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg)
+![](http://oe9f6n76x.bkt.clouddn.com/16-9-29/42764938.jpg =100*100)
 
 ## 4. 小结
 
