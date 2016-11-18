@@ -6,7 +6,7 @@ description: tar压缩解压缩命令详解
 keywords: Ubuntu,tar，压缩
 ---
 
-如果经常使用Ubuntu的同学一定对tar命令不陌生，我虽然经常使用此命令，但是一直没有系统的对tar的使用进行总结，现在就对tar的使用做一个小结。
+如果经常使用Ubuntu的同学一定对tar命令不陌生，我也经常使用此命令，但是一直没有系统的对tar的使用进行系统的总结，现在就对tar的使用做一个小结。
 
 ## tar命令
 
@@ -38,10 +38,14 @@ keywords: Ubuntu,tar，压缩
 **注意：参数-f是必须的 -f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。**
 
 tar -cf all.tar *.jpg 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
+
 tar -rf all.tar *.gif 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 
+
 tar -uf all.tar logo.gif 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。 
-tar -tf all.tar 这条命令是列出all.tar包中所有文件，-t是列出文件的意思 
-tar -xf all.tar 这条命令是解出all.tar包中所有文件，-x是解开的意思
+
+tar -tf all.tar 这条命令是列出all.tar包中所有文件，-t是列出文件的意思。
+
+tar -xf all.tar 这条命令是解出all.tar包中所有文件，-x是解开的意思。
 
 ### 查看
 
