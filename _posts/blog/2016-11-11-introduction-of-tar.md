@@ -6,7 +6,9 @@ description: tar压缩解压缩命令详解
 keywords: Ubuntu,tar，压缩
 ---
 
-## tar命令详解
+如果经常使用Ubuntu的同学一定对tar命令不陌生，我虽然经常使用此命令，但是一直没有系统的对tar的使用进行总结，现在就对tar的使用做一个小结。
+
+## tar命令
 
 - -c: 建立压缩档案 
 
@@ -33,9 +35,7 @@ keywords: Ubuntu,tar，压缩
 
 - -O：将文件解开到标准输出
 
-**注意：参数-f是必须的**
-
-**-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。**
+**注意：参数-f是必须的 -f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。**
 
 tar -cf all.tar *.jpg 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
 tar -rf all.tar *.gif 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。 
@@ -44,9 +44,11 @@ tar -tf all.tar 这条命令是列出all.tar包中所有文件，-t是列出文�
 tar -xf all.tar 这条命令是解出all.tar包中所有文件，-x是解开的意思
 
 ### 查看
+
 tar -tf aaa.tar.gz   在不解压的情况下查看压缩包的内容
 
 ### 压缩
+
 tar –cvf jpg.tar *.jpg //将目录里所有jpg文件打包成tar.jpg
 
 tar –czf jpg.tar.gz *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz
@@ -56,6 +58,7 @@ tar –cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，
 tar –cZf jpg.tar.Z *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z
 
 ### 解压
+
 tar –xvf file.tar //解压 tar包
 
 tar -xzvf file.tar.gz //解压tar.gz
@@ -64,6 +67,7 @@ tar -xjvf file.tar.bz2   //解压 tar.bz2tar –xZvf file.tar.Z //解压tar.Z
 
 
 ## 总结
+
 1、*.tar 用 tar –xvf 解压
 
 2、*.gz 用 gzip -d或者gunzip 解压
