@@ -3,7 +3,7 @@ layout: post
 title: tar压缩解压缩命令详解
 categories: Ubuntu
 description: tar压缩解压缩命令详解
-keywords: Ubuntu,tar，压缩
+keywords: Ubuntu,tar,压缩
 ---
 
 如果经常使用Ubuntu的同学一定对tar命令不陌生，我也经常使用此命令，但是一直没有系统的对tar的使用进行系统的总结，现在就对tar的使用做一个小结。
