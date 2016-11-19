@@ -6,9 +6,9 @@ description: 软件工程（C编码实践篇）学习总结
 keywords: 软件工程,C语言
 ---
 
-　　齐行君+原创作品转载请注明出处：http://qixingjun.tech/2016/11/19/what-i-gained-from-the-software-engineering
+　　齐行君+原创作品转载请注明出处：[http://qixingjun.tech/2016/11/19/what-i-gained-from-the-software-engineering](http://qixingjun.tech/2016/11/19/what-i-gained-from-the-software-engineering)
 
-　　《软件工程（C编码实践篇）》MOOC课程http://mooc.study.163.com/course/USTC-1000002006
+　　《软件工程（C编码实践篇）》MOOC课程[http://mooc.study.163.com/course/USTC-1000002006](http://mooc.study.163.com/course/USTC-1000002006)
 
 ## 一、课程心得
 	
