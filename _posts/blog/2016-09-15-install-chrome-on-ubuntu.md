@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在ubuntu下安装Chrome
-categories: Tools
+categories: Ubuntu
 description: 在ubuntu下安装Chrome，解决firefox和Chromium下flash无法使用的问题。
 keywords: Ubuntu,Flash,chrome,firefox 
 ---
