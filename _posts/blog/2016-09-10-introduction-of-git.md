@@ -382,7 +382,7 @@ $ ls
 
 ### 9.1 创建并添加 SSH Key
 
-第一步：通过命令`ssh-keygen -t rsa –C “youremail@example.com`来创建SSH Key，我们通过访问C盘用户目录下的`.ssh`文件夹，发现多了两个文件：`id_rsa`，`id_rsa.pub`。其中id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。第二步：登录github,打开`settings`中的`SSH Keys`页面，然后点击`Add SSH Key`,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容即可。
+第一步：通过命令`ssh-keygen -t rsa –C "youremail@example.com"`来创建SSH Key，我们通过访问C盘用户目录下的`.ssh`文件夹，发现多了两个文件：`id_rsa`，`id_rsa.pub`。其中id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。第二步：登录github,打开`settings`中的`SSH Keys`页面，然后点击`Add SSH Key`,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容即可。
 
 ### 9.2 关联远程仓库
 
