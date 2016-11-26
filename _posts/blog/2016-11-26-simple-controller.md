@@ -25,7 +25,7 @@ keywords: Java，Servlet，JSP，登录
 
 ### 3.1 简单java对象(pojo）--UserBean
 
-```
+```java
 package com.qixingjun.pojo;
 
 /**
