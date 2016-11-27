@@ -61,7 +61,7 @@ public class UserBean {
 
 #### 3.2.1 数据访问层(dao)--IUserDao
 
-```
+```java
 package com.qixingjun.dao;
 
 /**
@@ -78,7 +78,7 @@ public interface IUserDao {
 
 #### 3.2.1 数据访问层(dao.impl)--UserDaoImpl
 
-```
+```java
 package com.qixingjun.dao.impl;
 
 import com.qixingjun.dao.IUserDao;
@@ -137,7 +137,7 @@ public class UserDaoImpl implements IUserDao {
 
 ### 3.2 业务处理层(service、service.impl)
 
-```
+```java
 package com.qixingjun.service;
 
 /**
@@ -156,7 +156,7 @@ public interface ILoginService  {
 
 #### 3.3.1 业务处理层(service)
 
-```
+```java
 package com.qixingjun.service;
 
 /**
@@ -173,7 +173,7 @@ public interface ILoginService  {
 
 #### 3.3.2 业务处理层(service.impl)
 
-```
+```java
 package com.qixingjun.service.impl;
 
 import com.qixingjun.dao.impl.UserDaoImpl;
@@ -197,7 +197,7 @@ public class LoginServiceImpl implements ILoginService {
 
 ### 3.4 控制层(controller)--LoginController
 
-```
+```java
 package com.qixingjun.controller;
 
 import com.qixingjun.service.impl.LoginServiceImpl;
@@ -237,7 +237,7 @@ public class LoginController extends HttpServlet {
 
 ### 3.5 登录页
 
-```
+```jsp
 <%--
   Created by IntelliJ IDEA.
   User: XingJun Qi
