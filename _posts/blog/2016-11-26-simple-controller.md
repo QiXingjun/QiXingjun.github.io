@@ -237,7 +237,7 @@ public class LoginController extends HttpServlet {
 
 ### 3.5 登录页
 
-```jsp
+```java
 <%--
   Created by IntelliJ IDEA.
   User: XingJun Qi
