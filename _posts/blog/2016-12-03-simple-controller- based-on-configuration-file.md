@@ -7,6 +7,7 @@ keywords: Java，Servlet，JSP，controller，configuration
 ---
 
 　　将[JavaWeb实现简单的登录验证](http://qixingjun.tech/2016/11/26/simple-controller/)这篇文章中的示例进行修改。将其中的控制器部分改为使用配置文件来完成。还有一个小的修改，将登录的验证方式，从以用户名查询密码然后进行比较变为了通过用户名密码查询user，如果查出来就返回true，否则返回false。
+
 ***
 
 　　附，源码地址：[simplecontroller](https://github.com/QiXingjun/simplecontroller)
@@ -61,6 +62,7 @@ public class UserBean {
     }
 }
 ```
+
 #### 3.1.1 ActionXmlBean
 
 ```java
@@ -119,7 +121,9 @@ public class ActionXmlBean {
     }
 }
 ```
+
 #### 3.1.1 ResultXmlBean
+
 ```java
 package com.qixingjun.pojo;
 
@@ -380,7 +384,9 @@ public class ActionController extends HttpServlet {
     }
 }
 ```
+
 ### 3.4 请求处理层(LoginAction)
+
 ```java
 package com.qixingjun.action;
 
@@ -532,6 +538,7 @@ public class ParseXml {
     </action>
 </action-controller>
 ```
+
 ### 3.7 登录页
 　　登录页基本没有变化，除了form的action部分修改为了`action="/login.scaction"`,之所以这么修改是因为在ActionController的WebServlet部分定义了`@WebServlet(name = "ActionController",urlPatterns = "*.scaction")`。
 
