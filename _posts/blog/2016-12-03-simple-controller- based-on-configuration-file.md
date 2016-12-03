@@ -63,7 +63,7 @@ public class UserBean {
 }
 ```
 
-#### 3.1.1 ActionXmlBean
+#### 3.1.2 ActionXmlBean
 
 ```java
 package com.qixingjun.pojo;
@@ -122,7 +122,7 @@ public class ActionXmlBean {
 }
 ```
 
-#### 3.1.1 ResultXmlBean
+#### 3.1.3 ResultXmlBean
 
 ```java
 package com.qixingjun.pojo;
@@ -189,7 +189,7 @@ public interface IUserDao {
 }
 ```
 
-#### 3.2.1 数据访问层(dao.impl)--UserDaoImpl
+#### 3.2.2 数据访问层(dao.impl)--UserDaoImpl
 
 ```java
 package com.qixingjun.dao.impl;
