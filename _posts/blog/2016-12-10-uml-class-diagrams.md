@@ -13,6 +13,7 @@ keywords: UML
 　　【泛化关系】：是一种继承关系，表示一般与特殊的关系，它指定了子类如何特化父类的所有特征和行为。例如：老虎是动物的一种，即有老虎的特性也有动物的共性。
 
 　　【箭头指向】：带三角箭头的实线，箭头指向父类
+
 ![Generalization](http://i.imgur.com/lzjkYbj.png)
 
 ## 2. 实现（Realization）
@@ -20,6 +21,7 @@ keywords: UML
 　　【实现关系】：是一种类与接口的关系，表示类是接口所有特征和行为的实现。
 
 　　【箭头指向】：带三角箭头的虚线，箭头指向接口。
+
 ![Realization](http://i.imgur.com/CfLz8CS.png)
 
 ## 3. 关联（Association)
@@ -29,11 +31,13 @@ keywords: UML
 　　【代码体现】：成员变量
 
 　　【箭头及指向】：带普通箭头的实心线，指向被拥有者
+
 ![Association](http://i.imgur.com/QO57ehu.png)
 
 　　上图中，老师与学生是双向关联，老师有多名学生，学生也可能有多名老师。但学生与某课程间的关系为单向关联，一名学生可能要上多门课程，课程是个抽象的东西他不拥有学生。 
 
 　　下图为自身关联： 
+
 ![Association](http://i.imgur.com/k6WDoAb.png)
 
 ## 4. 聚合（Aggregation）
@@ -43,6 +47,7 @@ keywords: UML
 　　【代码体现】：成员变量
 
 　　【箭头及指向】：带空心菱形的实心线，菱形指向整体
+
 ![Aggregation](http://i.imgur.com/8izLLAm.png)
 
 ## 5. 组合(Composition)
@@ -52,6 +57,7 @@ keywords: UML
 　　【代码体现】：成员变量
 
 　　【箭头及指向】：带实心菱形的实线，菱形指向整体
+
 ![composition](http://i.imgur.com/FDpsmJV.png)
 
 ## 6. 依赖(Dependency)
@@ -61,6 +67,7 @@ keywords: UML
 　　【代码表现】：局部变量、方法的参数或者对静态方法的调用
 
 　　【箭头及指向】：带箭头的虚线，指向被使用者
+
 ![dependency](http://i.imgur.com/Rd3NrpD.png)
 
 ## 7. 总结
@@ -68,4 +75,5 @@ keywords: UML
 　　各种关系的强弱顺序：**泛化 = 实现 > 组合 > 聚合 > 关联 > 依赖**
 
 　　下面这张UML图，比较形象地展示了各种类图关系：
+
 ![uml-example](http://i.imgur.com/CEcXhAO.png)
