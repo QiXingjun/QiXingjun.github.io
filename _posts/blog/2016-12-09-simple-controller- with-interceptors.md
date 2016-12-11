@@ -6,7 +6,7 @@ description: JavaWeb实现简单的登录验证(实现拦截器来记录日志)
 keywords: Java，Servlet，JSP，controller，interceptor
 ---
 
-　　将[JavaWeb实现简单的登录验证(controller采用配置文件)](http://qixingjun.tech/2016/12/03/simple-controller-based-on-configuration-file/)这篇文章中的示例进行修改。将其中的控制器部分改为使用配置文件来完成。还有一个小的修改，将登录的验证方式，从以用户名查询密码然后进行比较变为了通过用户名密码查询user，如果查出来就返回true，否则返回false。
+　　在[JavaWeb实现简单的登录验证(controller采用配置文件)](http://qixingjun.tech/2016/12/03/simple-controller-based-on-configuration-file/)的基础上增加拦截器的功能：定义一个POJO LogWriter作为拦截器，在该类中定义方法log（），log方法实现的功能为记录每次客户端请求的action名称、类型、访问开始时间、访问结束时间、请求返回结果result值，并将信息追加至log.xml，保存在PC磁盘上，这里主要就是用到了xml的写入。。
 
 ***
 
