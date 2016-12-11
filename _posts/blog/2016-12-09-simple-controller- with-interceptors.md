@@ -157,7 +157,7 @@ public class LogWriter {
 
 ### 3.3 请求处理层(LoginActionFactory)
 
- 　　由于需要使用动态代理来实现拦截器（使用的是JDK动态代理），故将LoginAction拆分成了ILoginAction和LoginActionImpl，即：LoginAction的接口和实现类，并且写一个代理工厂类LoginActionFactory。
+ 　　由于需要使用动态代理来实现拦截器（使用的是JDK动态代理），故将LoginAction拆分成了ILoginAction和LoginActionImpl，即：LoginAction的接口和实现类，并且写一个代理工厂类LoginActionFactory，返回LoginAction的代理代理。
 
 ```java
 package com.qixingjun.action;
