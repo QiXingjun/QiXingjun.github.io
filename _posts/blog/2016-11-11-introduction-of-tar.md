@@ -85,3 +85,7 @@ keywords: Ubuntu,tar,压缩
 - *.Z 用 uncompress 解压
 
 - *.tar.Z 用tar –xZf 解压
+
+## by the way
+
+如果是解压zip文件，直接使用命令`unzip 文件名　目录名`　其中目录名是可以省略的。
