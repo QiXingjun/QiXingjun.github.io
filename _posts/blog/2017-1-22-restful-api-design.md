@@ -161,11 +161,12 @@ RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其�
 比如，当用户向api.example.com的根目录发出请求，会得到这样一个文档。
 
 ```
-{"link": {
-  "rel":   "collection https://www.example.com/zoos",
-  "href":  "https://api.example.com/zoos",
-  "title": "List of zoos",
-  "type":  "application/vnd.yourformat+json"
+{
+	"link": {
+		"rel":   "collection https://www.example.com/zoos",
+		"href":  "https://api.example.com/zoos",
+		"title": "List of zoos",
+		"type":  "application/vnd.yourformat+json"
 	}
 }
 ```
