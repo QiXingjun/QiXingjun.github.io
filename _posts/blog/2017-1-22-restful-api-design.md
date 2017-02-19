@@ -9,8 +9,6 @@ keywords: RESTful
 网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备......）。
 因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。这导致API构架的流行，甚至出现"API First"的设计思想。RESTful API是目前比较成熟的一套互联网应用程序的API设计理论。
 
-今天，我将介绍RESTful API的设计细节，探讨如何设计一套合理、好用的API。
-
 ## 一、协议
 
 API与用户的通信协议，总是使用HTTPs协议。
@@ -198,6 +196,7 @@ Hypermedia API的设计被称为HATEOAS。Github的API就是这种设计，访�
 ## 十一、其他
 
 （1）API的身份认证应该使用OAuth 2.0框架。
+
 （2）服务器返回的数据格式，应该尽量使用JSON，避免使用XML。
 
-本文转自：http://www.ruanyifeng.com/blog/2014/05/restful_api.html
+本文转自:[阮一峰的博客：http://www.ruanyifeng.com/blog/2014/05/restful_api.html](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
