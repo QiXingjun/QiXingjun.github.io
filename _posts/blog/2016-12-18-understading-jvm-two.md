@@ -6,13 +6,13 @@ description: 深入理解Java虚拟机（二）——Java内存溢出
 keywords: Java虚拟机，JVM
 ---
 
-按照Java内存的结构，发生内存溢出的地方常在于堆、栈、方法区、直接内存。
+按照Java内存的结构，发生内存溢出的地方常在于**堆、栈、方法区、直接内存**。
 
 ## 1、堆溢出
 
 堆溢出原因莫过于对象太多导致，看代码。
 
-```
+```java
 import java.util.ArrayList;  
 import java.util.List;  
   
@@ -30,10 +30,6 @@ public class HeapOOM {
           
         while (true) {  
             list.add(new OOMObject());  
-            /*System.out.println("total(k):"+Runtime.getRuntime().totalMemory()/1024+ 
-                    "  freeMemory(k):"+Runtime.getRuntime().freeMemory()/1024+ 
-                    "  maxMemory(k):"+Runtime.getRuntime().maxMemory()/1024+ 
-                    "  availableProcessors:"+Runtime.getRuntime().availableProcessors());*/  
         }  
     }  
 }  
@@ -56,21 +52,25 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 ## 2、栈溢出
 
 根据JAVA虚拟机规范描述：
-如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError
-如果虚拟机在扩展栈时无法申请到足够的内存空间，将抛出OutOfMemoryError。
+
+1. 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError
+2. 如果虚拟机在扩展栈时无法申请到足够的内存空间，将抛出OutOfMemoryError。
+
 实验表明：
 在单线程下，无论是由于栈帧太大还是虚拟机栈容量太小，当内存无法分配的时候，虚拟机抛出的都是StackOverflowError。
-通过不断的建立新线程的方式可以产生内存溢出溢出。为每个线程的栈分配的内存越大，反而越容易产生内存溢出异常。
+
+通过不断的建立新线程的方式可以产生内存溢出。为每个线程的栈分配的内存越大，反而越容易产生内存溢出异常。
+
 如果是建立过多线程导致的内存溢出，在不能减少线程数量或者更换64位虚拟机的情况下，就只能通过减少最大堆和减少栈容量来换取更多的线程。
-假设32位windows系统虚拟机最大设为2G，虚拟机提供了参数来控制java堆和方法区这两部分最大值，剩余的内存为2G - Xmx- MaxPermSize，如果虚拟机本身进程内存大小不算在内，省下的内存就有虚拟机和本地方法栈瓜分了。每个线程分配到的栈容量越大，可以建立的线程数量自然就越少。
-[java] view plain copy print?在CODE上查看代码片派生到我的代码片
-package baby.oom;  
+
+假设32位windows系统虚拟机最大设为2G，虚拟机提供了参数来控制java堆和方法区这两部分最大值，如果虚拟机本身进程内存大小不算在内，省下的内存就有虚拟机和本地方法栈瓜分了。每个线程分配到的栈容量越大，可以建立的线程数量自然就越少。
+
+```java
 /** 
  * 栈异常 
  * 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError 
  * 如果虚拟机在扩展栈时无法申请到足够的内存空间，将抛出OutOfMemoryError 
  * VM Args：-Xss128k 
- * @author  
  */  
 public class JavaVMStackSOF {  
   
@@ -102,17 +102,15 @@ Exception in thread "main" java.lang.StackOverflowError
      
     默认情况下，即不加Xss限制，输出的length为8956，加了Xss128k length位2403 
  */  
-
+```
  
-[java] view plain copy print?在CODE上查看代码片派生到我的代码片
-package baby.oom;  
+```java
 /** 
  * VM Args：-Xss2M （这时候不妨设大些） 
- * @author  
  */  
 public class JavaVMStackOOM {  
    
-    int i=0;  
+       int i=0;  
        private void dontStop() {  
               while (true) {  
               }  
@@ -147,14 +145,15 @@ public class JavaVMStackOOM {
 //i=391  
 //thread num:391  
 //Exception in thread "main" java.lang.OutOfMemoryError: unable to create new native thread  
+```
 
  
 ## 3、方法区溢出
 
 当运行时常量池过大或者类过多时就会导致方法区溢出。
-[java] view plain copy print?在CODE上查看代码片派生到我的代码片
-package baby.oom;  
-  
+
+
+```java  
 import java.util.ArrayList;  
 import java.util.List;  
   
@@ -181,11 +180,9 @@ Exception in thread "main" java.lang.OutOfMemoryError: PermGen space
     at baby.oom.RuntimeConstantPoolOOM.main(RuntimeConstantPoolOOM.java:18) 
  
 */  
-
+```
  
-[java] view plain copy print?在CODE上查看代码片派生到我的代码片
-package baby.oom;  
-  
+```java  
 import java.lang.reflect.Method;  
   
 import net.sf.cglib.proxy.Enhancer;  
@@ -239,14 +236,14 @@ Caused by: java.lang.OutOfMemoryError: PermGen space
     at java.lang.ClassLoader.defineClass(ClassLoader.java:615) 
     ... 8 more 
  */  
+```
 
  
 ## 4、直接内存溢出
 
 虽然使用DerictByteBuffer分配内存也会抛出内存溢出异常，但它抛出异常时并没有真正向操作系统申请分配，而是通过计算得知内存无法分配，于是手动抛出异常，真正申请分配内存的方法是unsafe.allocateMemory()。
-[java] view plain copy print?在CODE上查看代码片派生到我的代码片
-package baby.oom;  
-  
+
+```java  
 import java.lang.reflect.Field;  
       
 import sun.misc.Unsafe;   
@@ -278,3 +275,4 @@ Exception in thread "main" java.lang.OutOfMemoryError
     at sun.misc.Unsafe.allocateMemory(Native Method) 
     at baby.oom.DirectMemoryOOM.main(DirectMemoryOOM.java:20) 
 */  
+```
