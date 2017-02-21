@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 深入理解Java虚拟机（三）——对象存活判定算法和垃圾收集算法
+title: 深入理解Java虚拟机（四）——hotspot垃圾收集算法
 categories: 深入理解JVM
-description: 深入理解Java虚拟机（三）——对象存活判定算法和垃圾收集算法
+description: 深入理解Java虚拟机（四）——hotspot垃圾收集算法
 keywords: Java虚拟机，JVM
 ---
 
