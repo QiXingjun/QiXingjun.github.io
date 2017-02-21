@@ -6,7 +6,7 @@ description: 深入理解Java虚拟机（四）——hotspot垃圾收集器
 keywords: Java虚拟机，JVM
 ---
 
-本文所讲的是sun hotspot虚拟机实现，主要讲解Serial，ParNew，Parallel Scavenge,Serial Old,CMS(Concurrent Marsk Sweep),Parallel  Old,G1（garbage first）垃圾收集器。
+本文所讲的是sun hotspot虚拟机实现，主要讲解Serial，ParNew，Parallel Scavenge,Serial Old,CMS(Concurrent Mark Sweep),Parallel Old,G1（garbage first）垃圾收集器。
 
 先看Java堆内存结构，适用于非G1收集器外的垃圾收集器：
 ![](http://i.imgur.com/wMqvxVo.png)
