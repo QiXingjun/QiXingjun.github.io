@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 深入理解Java虚拟机（四）——hotspot垃圾收集算法
+title: 深入理解Java虚拟机（四）——hotspot垃圾收集器
 categories: 深入理解JVM
-description: 深入理解Java虚拟机（四）——hotspot垃圾收集算法
+description: 深入理解Java虚拟机（四）——hotspot垃圾收集器
 keywords: Java虚拟机，JVM
 ---
 
