@@ -41,8 +41,8 @@ permalink: /about/
 
 * GitHub：[@QiXingjun](https://github.com/QiXingjun)
 * 博客：[@{{ site.title }}]({{ site.url }})
-* 微博: [@齐小白HENRY](http://weibo.com/henry2to2)
-* 知乎: [@齐小白](http://www.zhihu.com/people/qi-xiao-bai-54)
+* 微博：[@齐小白](http://weibo.com/henry2to2)
+* 知乎：[@齐小白](http://www.zhihu.com/people/qi-xiao-bai-54)
 
 
 
