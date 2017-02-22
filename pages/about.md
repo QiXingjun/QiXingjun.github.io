@@ -31,7 +31,7 @@ permalink: /about/
 
 7、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
 
-8、熟练掌握Maven构建项目，熟练使用多种Java集成开发环境，如：Eclipse、IntelliJ IDEA；
+8、熟练使用Maven构建项目，熟练使用Eclipse、IntelliJ IDEA等多种集成开发环境；
 
 9、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
 
