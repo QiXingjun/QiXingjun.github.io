@@ -84,7 +84,7 @@ API与用户的通信协议，总是使用HTTPs协议。
 >GET /zoos/ID/animals：列出某个指定动物园的所有动物
 >
 >DELETE /zoos/ID/animals/ID：删除某个指定动物园的指定动物
->
+
 ## 六、过滤信息（Filtering）
 
 如果记录数量很多，服务器不可能都将它们返回给用户。API应该提供参数，过滤返回结果。
