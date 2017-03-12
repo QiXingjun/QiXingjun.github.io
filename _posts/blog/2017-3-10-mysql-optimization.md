@@ -54,4 +54,81 @@ MySQL所使用的 SQL 语言是用于访问数据库的最常用标准化语言�
 
 4. 在MYSQL 命令下： SOURCE 下载路径/sakila-data.sql #插入数据
 
-### 3.2 sakila的安装
+### 3.2 mysql慢查询日志
+
+#### 3.2.1 慢查询日志的相关命令
+
+1. 查看mysql是否开启慢查询日志
+
+	`show variables like 'slow_query_log';`
+
+2. 设置没有索引的记录到慢查询日志
+
+	`set global log_queries_not_using_indexes=on;`
+
+3. 查看超过多长时间的sql进行记录到慢查询日志
+
+	`show variables like 'long_query_time';`
+
+4. 开启慢查询日志
+
+	`set global slow_query_log=on;`
+
+5. 查看日志记录位置
+
+	`show variables like 'slow_query_log_file;`
+
+6. 查看日志
+
+	`sudo tail -50 第五步查询出来的记录日志的位置`
+
+需要注意的是：前5条是在登录mysql之后使用，而第6条是在退出mysql之后使用。
+
+#### 3.2.2 慢查询日志的格式
+
+```
+sql的执行时间
+
+Time: 170312 13:09:10
+
+执行sql的主机信息
+
+User@Host: root[root] @ localhost []
+
+sql的执行信息
+
+Query_time: 0.000361  Lock_time: 0.000101 Rows_sent: 2 Rows_examined: 2
+
+sql的执行时间
+
+SET timestamp=1489295350;
+
+sql的具体内容
+
+select * from store;
+```
+
+#### 3.2.3 慢查询日志的分析工具
+
+* mysqldumpslow
+
+mysqldumpslow的具体使用命令，可以使用`mysqldumpslow -h`查看，例如,使用如下命令查看慢查询日志的前3条：
+`sudo mysqldumpslow -t 3 /var/lib/mysql/VM-25-22-ubuntu-slow.log | more`
+
+* pt-query-digest
+
+pt-query-digestde 的查询结果会更加的完善和详细。例如，使用如下命令进行慢查询日志分析：
+`sudo pt-query-digest /var/lib/mysql/VM-25-22-ubuntu-slow.log | more`
+
+### 3.3 通过慢查询日志进行问题定位
+
+有问题的SQL的特征：
+
+* **查询次数多，且每次查询占用的时间长的SQL**：通常为pt-query-digest分析的前几个查询
+* **IO大的SQL**：注意pt-query-digest分析中的Rows examine项
+* **未命中索引的SQL**：注意pt-query-digest分析中的Rows examine和Rows Send的对比
+
+ 
+
+
+
