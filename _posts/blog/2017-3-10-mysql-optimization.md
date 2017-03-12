@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MySQL优化（一） Mysql简介及SQL语句优化
+title: MySQL优化（一） 数据库优化简介及SQL语句优化
 categories: MySQL 
-description: MySQL优化（一） Mysql简介及SQL语句优化
+description: MySQL优化（一） 数据库优化简介及SQL语句优化
 keywords: MySQL 优化 SQL
 ---
 
