@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Maven依赖冲突
-categories: maven 
+categories: Maven 
 description: Maven依赖冲突
 keywords: maven 依赖冲突
 ---
