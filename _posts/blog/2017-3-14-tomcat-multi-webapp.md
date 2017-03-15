@@ -46,7 +46,7 @@ Tomcat6以及之后版本服务器的类加载架构：
 
 ## 4 WebAppClassLoader中的loadClass方法：
 
-```
+```java
 public Class loadClass(String name, boolean resolve)
 		throws ClassNotFoundException {
 
