@@ -44,7 +44,7 @@ Tomcat5以及之前版本服务器的类加载架构：
 Tomcat6以及之后版本服务器的类加载架构：
 ![](http://i.imgur.com/crujN4R.jpg)
 
-## 4 WebAppClassLoader中的loadClass方法：
+## 4 WebAppClassLoader中的loadClass方法
 
 ```java
 public Class loadClass(String name, boolean resolve)
