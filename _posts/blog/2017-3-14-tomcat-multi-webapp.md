@@ -176,7 +176,7 @@ public Class loadClass(String name, boolean resolve)
 	}
 ```
 
-通过上面的源代码，可以看出来Tomcat在加载webapp级别的类的时候，默认情况下是不遵守parent-first的，这样做的好处是更好的实现了应用的隔离。
+通过上面的源代码，可以看出来Tomcat在加载webapp级别的类的时候，默认情况下是不遵守parent-first的，这样做便更好的实现了应用的隔离。
 
 
 
