@@ -8,7 +8,7 @@ menu: 关于
 permalink: /about/
 ---
 
-　　我是齐行君，本科就读于苏州大学计算机科学与技术学院，现就读于中国科学技术大学苏州研究院，喜欢读书，热爱Coding，对Java后台开发比较感兴趣。
+　　我是齐行君，本科就读于苏州大学计算机科学与技术学院，现就读于中国科学技术大学苏州研究院，喜欢读书，热爱Coding。
 
 ## 坚信
 
@@ -29,11 +29,13 @@ permalink: /about/
 
 6、熟悉Linux, 具备Linux下的编码能力；
 
-7、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
+7、掌握Python, Shell等脚本语言；
 
-8、熟练使用Maven构建项目，熟练使用Eclipse、IntelliJ IDEA等多种集成开发环境；
+8、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
 
-9、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
+9、熟练使用Maven构建项目，熟练使用Eclipse、IntelliJ IDEA等多种集成开发环境；
+
+10、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
 
 
 ## 联系
