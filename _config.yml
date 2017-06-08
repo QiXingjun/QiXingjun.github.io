@@ -99,3 +99,12 @@ google:
 #      Datas       #
 # ---------------- #
 skill_software_keywords: [Java, C++, Python, Design Patterns]
+
+
+deploy:
+  type: git
+  repo: 
+    github: https://github.com/QiXingjun/QiXingjun.github.io.git
+    coding: https://git.coding.net/henryqi/henryqi.git
+  branch: master
+  message: a little wroks
