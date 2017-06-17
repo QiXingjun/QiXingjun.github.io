@@ -6,7 +6,7 @@ url: http://qixingjun.tech
 date_format: "ordinal"
 title: 齐小白
 subtitle: "每天进步一点点"
-description: "齐行君的个人博客"
+description: "齐行君, 齐小白, QiXingjun, Xingjun Qi"
 keywords: 齐行君, 齐小白, QiXingjun, Xingjun Qi
 favicon: /favicon.ico
 timezone: Asia/Shanghai
@@ -107,4 +107,4 @@ deploy:
     github: https://github.com/QiXingjun/QiXingjun.github.io.git
     coding: git@git.coding.net:henryqi/henryqi.git
   branch: master
-  message: a little wroks
+  message: just do it
