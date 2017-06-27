@@ -6,7 +6,7 @@ url: http://qixingjun.tech
 date_format: "ordinal"
 title: 齐小白
 subtitle: "每天进步一点点"
-description: "齐行君, 齐小白, QiXingjun, Xingjun Qi"
+description: "齐行君[齐小白]的个人博客"
 keywords: 齐行君, 齐小白, QiXingjun, Xingjun Qi
 favicon: /favicon.ico
 timezone: Asia/Shanghai
@@ -19,7 +19,7 @@ side_bar_repo_limit: 5
 # ---------------- #
 author: Qi Xingjun
 organization: USTC
-organization_url: www.ustc.edu.cn
+organization_url: http://www.ustc.edu.cn
 location: SuZhou, China
 email: 18862141550@163.com
 
