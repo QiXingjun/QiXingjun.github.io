@@ -1,12 +1,15 @@
-<!-- 多说评论框 start -->
+<!-- gitalk start -->
 	<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-		<script>
-		  var cloudTieConfig = {
-			url: document.location.href, 
-			sourceId: "",
-			productKey: "ea1a8437b0434816bd6a8a6f71bdcedb",
-			target: "cloud-tie-wrapper"
-		  };
-		</script>
-	<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<!-- 多说公共JS代码 end -->
+	<script>
+		var gitalk = new Gitalk({
+		    clientID: '909a205c9a12d4606792',
+		    clientSecret: '56d8296f536be0b8ae0d1d275fe400031c3b8cd1',
+		    repo: 'https://github.com/QiXingjun/QiXingjun.github.io',
+		    owner: 'QiXingjun',
+		    admin: ['QiXingjun'],
+		})
+		gitalk.render('gitalk-container')
+	</script>
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- gitalk end -->
