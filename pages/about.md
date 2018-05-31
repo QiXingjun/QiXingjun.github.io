@@ -29,7 +29,7 @@ permalink: /about/
 
 6、熟悉Linux, 具备Linux下的编码能力、熟悉Shell语言；
 
-7、掌握Python语言以及Django和Flask等及轻量级的Python Web框架；
+7、掌握Python语言以及Django和Flask等轻量级的Python Web框架；
 
 8、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
 
