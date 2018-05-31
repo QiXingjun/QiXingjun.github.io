@@ -27,9 +27,9 @@ permalink: /about/
 
 5、熟悉JVM的原理、Java内存结构、GC算法等；
 
-6、熟悉Linux, 具备Linux下的编码能力；
+6、熟悉Linux, 具备Linux下的编码能力、熟悉Shell语言；
 
-7、掌握Python, Shell等脚本语言；
+7、掌握Python语言以及Django和Flask等及轻量级的Python Web框架；
 
 8、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
 
