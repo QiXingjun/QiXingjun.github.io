@@ -19,23 +19,21 @@ permalink: /about/
 
 1、拥有扎实的计算机专业基本功和良好的编码习惯；
 
-2、熟悉 Java 及面向对象思想，对常用的设计模式有所了解；
+2、熟悉 Java语言以及Spring、SpringMVC、MyBatis等流行开源框架；
 
-3、熟悉 Spring、SpringMVC、MyBatis等流行开源框架；
+3、熟悉数据库原理，能熟练应用MySQL进行应用开发，熟悉事务，存储过程，索引；
 
-4、熟悉数据库原理，能熟练应用MySQL进行应用开发，熟悉事务，存储过程，索引；
+4、熟悉JVM的原理、Java内存结构、GC算法等；
 
-5、熟悉JVM的原理、Java内存结构、GC算法等；
+5、熟悉Linux, 具备Linux下的编码能力、熟悉Shell语言；
 
-6、熟悉Linux, 具备Linux下的编码能力、熟悉Shell语言；
+6、掌握Python语言以及Django和Flask等轻量级的Python Web框架；
 
-7、掌握Python语言以及Django和Flask等轻量级的Python Web框架；
+7、熟悉RESTful的接口编写风格；
 
-8、熟悉RESTful的接口编写风格；
+8、熟悉PHP语言；
 
-9、熟悉PHP语言；
-
-10、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
+9、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
 
 
 ## 联系
