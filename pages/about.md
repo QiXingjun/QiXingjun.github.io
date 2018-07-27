@@ -21,7 +21,7 @@ permalink: /about/
 
 2、熟悉 Java 及面向对象思想，对常用的设计模式有所了解；
 
-3、熟悉 Spring、SpringMVC、SpringBoot、MyBatis等流行开源框架；
+3、熟悉 Spring、SpringMVC、MyBatis等流行开源框架；
 
 4、熟悉数据库原理，能熟练应用MySQL进行应用开发，熟悉事务，存储过程，索引；
 
@@ -31,9 +31,9 @@ permalink: /about/
 
 7、掌握Python语言以及Django和Flask等轻量级的Python Web框架；
 
-8、熟悉Log4J,SLF4J等日志类库的使用，熟悉RESTful的接口编写风格；
+8、熟悉RESTful的接口编写风格；
 
-9、熟练使用Maven构建项目，熟练使用Eclipse、IntelliJ IDEA等多种集成开发环境；
+9、熟悉PHP语言；
 
 10、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
 
