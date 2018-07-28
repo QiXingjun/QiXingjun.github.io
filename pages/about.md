@@ -29,7 +29,7 @@ permalink: /about/
 
 5、掌握Python语言以及Django和Flask等轻量级的Python Web框架；
 
-6、熟悉PHP语言，熟悉RESTful的接口编写风格；
+6、熟悉PHP语言以及Laravel框架，熟悉RESTful的接口编写风格；
 
 7、能熟练使用Git、SVN等版本控制工具进行团队项目开发；
 
