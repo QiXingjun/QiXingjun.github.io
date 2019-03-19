@@ -1,4 +1,20 @@
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<% if (theme.gitment.client_id && theme.gitment.client_secret && theme.gitment.enable ){ %>
+    <div id="gitment_container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+        id: '<%= page.title %>',
+        owner: '<%= theme.gitment.owner %>',
+        repo: '<%= theme.gitment.repo %>',
+        oauth: {
+            client_id: '<%= theme.gitment.client_id %>',
+            client_secret: '<%= theme.gitment.client_secret %>',
+        },
+    })
+    gitment.render('gitment_container')
+    </script>
+<% } %>
 <!-- UY END -->
