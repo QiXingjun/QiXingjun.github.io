@@ -107,4 +107,4 @@ deploy:
     github: https://github.com/QiXingjun/QiXingjun.github.io.git
     coding: git@git.coding.net:henryqi/henryqi.git
   branch: master
-  message: just do it
+  message: Keep it Simple and Stupid
