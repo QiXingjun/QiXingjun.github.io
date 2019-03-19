@@ -5,7 +5,7 @@ baseurl:
 url: http://qixingjun.tech
 date_format: "ordinal"
 title: 齐小白
-subtitle: "每天进步一点点"
+subtitle: "Keep it Simple and Stupid"
 description: "齐行君[齐小白]的个人博客"
 keywords: 齐行君, 齐小白, QiXingjun, Xingjun Qi
 favicon: /favicon.ico
@@ -108,3 +108,13 @@ deploy:
     coding: git@git.coding.net:henryqi/henryqi.git
   branch: master
   message: Keep it Simple and Stupid
+  
+  # GitMent
+  gitment:
+  enable: true
+  id: '' #页面 ID, 可选。默认为 location.href
+  owner: QiXingjun
+  repo: QiXingjun.github.io #存储评论的 repo
+  client_id: '882b3da66d64407ca5d0' #你的 Client ID
+  client_secret: 'a07486fcabd3e8b98f1093c11b7c268b1b615f9f' #你的 Client secret
+
