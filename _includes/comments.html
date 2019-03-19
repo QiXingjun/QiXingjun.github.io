@@ -1,26 +1,27 @@
 <!-- UY BEGIN -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Valine - A simple comment system based on Leancloud.</title>
-    <!--Leancloud 操作库:-->
+<section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+    </section>
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <!--Valine 的核心代码库:-->
-    <script src="./dist/Valine.min.js"></script>
-</head>
-<body>
-    <div class="comment"></div>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     <script>
-        new Valine({
-            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-            av: AV, 
-            el: '.comment', // 
-            app_id: 'qrKGlS9e7o381tucnCJjSeFd-gzGzoHsz', // 这里填写上面得到的APP ID
-            app_key: 'ntGifsBf4svqR9FlWKOL1Y0F', // 这里填写上面得到的APP KEY
-            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = '<%= theme.valine.guest_info %>'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
         });
-    </script>
-</body>
-</html>
+        var notify = '<%= theme.valine.notify %>' == true;
+        var verify = '<%= theme.valine.verify %>' == true;
+        var valine = new Valine();
+        valine.init({
+            el: '#valine_container',
+            notify: notify,
+            verify: verify,
+            appId: "<%= theme.valine.appId %>",
+            appKey: "<%= theme.valine.appKey %>",
+            placeholder: "<%= theme.valine.placeholder %>",
+            pageSize:'<%= theme.valine.pageSize %>',
+            avatar:'<%= theme.valine.avatar %>',
+            lang:'<%= theme.valine.lang %>'
+        })
+</script>
 <!-- UY END -->
