@@ -109,7 +109,7 @@ deploy:
   branch: master
   message: Keep it Simple and Stupid
   
-params.valine:
+valine:
   enable: true
   appId: 'qrKGlS9e7o381tucnCJjSeFd-gzGzoHsz'
   appKey: 'ntGifsBf4svqR9FlWKOL1Y0F'
