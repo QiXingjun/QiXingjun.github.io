@@ -13,7 +13,6 @@ permalink: /about/
 ## 坚信
 
 * 每天进步一点点，量变终会质变
-* JUST DO IT.
 
 ## 专业技能
 
