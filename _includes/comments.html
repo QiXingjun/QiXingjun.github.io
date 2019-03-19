@@ -1,18 +1,26 @@
 <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<div id="gitment_container"></div>
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-    id: '<%= page.title %>',
-    owner: '<%= theme.gitment.owner %>',
-    repo: '<%= theme.gitment.repo %>',
-    oauth: {
-        client_id: '<%= theme.gitment.client_id %>',
-        client_secret: '<%= theme.gitment.client_secret %>',
-    },
-})
-gitment.render('gitment_container')
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valine - A simple comment system based on Leancloud.</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="./dist/Valine.min.js"></script>
+</head>
+<body>
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: 'qrKGlS9e7o381tucnCJjSeFd-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'ntGifsBf4svqR9FlWKOL1Y0F', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+        });
+    </script>
+</body>
+</html>
 <!-- UY END -->
