@@ -1,19 +1,18 @@
 <!-- UY BEGIN -->
 <!-- valine -->
-  {{- if .Site.valine.enable -}}
   <div id="vcomments"></div>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script type="text/javascript">
     new Valine({
         el: '#vcomments' ,
-        app_id: '{{ .Site.valine.appId }}',
-        app_key: '{{ .Site.valine.appKey }}',
-        notify: {{ .Site.valine.notify }}, 
-        verify: {{ .Site.valine.verify }}, 
-        avatar:'{{ .Site.valine.avatar }}', 
-        placeholder: '{{ .Site.valine.placeholder }}',
-        visitor: {{ .Site.valine.visitor }}
+        app_id: 'qrKGlS9e7o381tucnCJjSeFd-gzGzoHsz',
+        app_key: 'ntGifsBf4svqR9FlWKOL1Y0F',
+        notify: false, 
+        verify: false, 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor: true
     });
   </script>
 <!-- UY END -->
