@@ -109,5 +109,13 @@ deploy:
   branch: master
   message: Keep it Simple and Stupid
   
-  
+[params.valine]
+  enable = true
+  appId = 'qrKGlS9e7o381tucnCJjSeFd-gzGzoHsz'
+  appKey = 'ntGifsBf4svqR9FlWKOL1Y0F'
+  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = false # Verification code
+  avatar = 'mm' 
+  placeholder = '说点什么吧...'
+  visitor = true
 
