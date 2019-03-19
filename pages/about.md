@@ -2,13 +2,13 @@
 layout: page
 title: About
 description: Keep it Simple and Stupid
-keywords: QiXingjun, 齐行君
+keywords: QiXingjun, 齐小白
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-　　我是齐行君，喜欢读书，热爱Coding。
+　　我是齐小白，喜欢读书，热爱Coding。
 
 ## 联系
 
